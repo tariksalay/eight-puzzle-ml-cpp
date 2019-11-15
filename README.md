@@ -16,3 +16,5 @@ To visualize how to calculate the cost.
 ![Initial vs Goal](https://www.cs.princeton.edu/courses/archive/spr18/cos226/assignments/8puzzle/4moves.png)
 
 Initial vs Goal State
+
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://vimeo.com/373321351)
