@@ -17,4 +17,4 @@ To visualize how to calculate the cost.
 
 Initial vs Goal State
 
-[![Watch the video](https://i.vimeocdn.com/video/831405690_1280x720.jpg)](https://vimeo.com/373321351)
+![Watch the video](https://i.vimeocdn.com/video/831405690_1280x720.jpg)](https://vimeo.com/373321351)
