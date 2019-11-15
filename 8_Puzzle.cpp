@@ -1,10 +1,3 @@
-/*
-Brian Hare
-CS461 8Puzzle
-Tarik Salay
-2/9/19
-*/
-
 #include <iostream>
 #include <vector>
 #include <iterator> 
