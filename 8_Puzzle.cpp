@@ -19,8 +19,8 @@ bool visit(vector<vector<int> > a)  //boolean to see if node is visited
 {
 	if(visited[a]==true)
 		return true;
-	else
-		return false;
+	
+	return false;
 }
 
 
@@ -64,8 +64,8 @@ bool isGoal (vector<vector<int> > a){  //boolean to see if we've reached our goa
 bool safe(int i,int j) //boolean safe to see if grid is 3x3
 {
 	if(i>=0 && i<=2 && j>=0 && j<=2)
-	return true;
-	else
+		return true;
+	
 	return false;
 }
 
