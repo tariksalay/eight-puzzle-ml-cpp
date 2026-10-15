@@ -1,21 +1,57 @@
-This program takes a simple 3x3 as an input and solves it by calculating the cost with Manhattan(taxicab) Distance.
+# Eight Puzzle Solver — C++ Heuristic Search
 
+**C++ · Priority Queue · Manhattan Distance · State-Space Search**
 
-[Manhattan Distance](https://en.wikipedia.org/wiki/Taxicab_geometry)
+A command-line solver for the classic 3×3 sliding-tile puzzle. The program explores puzzle states and prioritizes candidates using a cost function based on path length plus Manhattan distance from each tile to its goal position.
 
+## Approach
 
-![A* logic](https://media.geeksforgeeks.org/wp-content/uploads/puzzle-1.jpg)
+1. Read nine tile values from standard input, where `0` represents the blank space.
+2. Represent the 3×3 board as nested C++ vectors.
+3. Generate neighboring boards by swapping the blank tile up, down, left, or right.
+4. Calculate a Manhattan-distance heuristic and use a priority queue to choose states.
+5. Track visited states and parent relationships; print a sequence of boards when the target is reached.
 
-For the search method, A-star algorithm has used, which is a graph traversal in order to find efficieny. At each iteration of its main loop, A* needs to determine which of its paths to extend. It does so based on the cost of the path and an estimate of the cost required to extend the path all the way to the goal.
+The goal position is:
 
+```text
+1 2 3
+4 5 6
+7 8 0
+```
 
-![Cost Graph](https://upload.wikimedia.org/wikipedia/commons/9/98/AstarExampleEn.gif)
+## Code and files
 
-To visualize how to calculate the cost.
+- [8_Puzzle.cpp](8_Puzzle.cpp) — complete C++ source.
+- [input.txt](input.txt) — example input file included in the repository.
+- [8_Puzzle.exe](8_Puzzle.exe) — historical compiled Windows executable.
+- [prog1_output.txt](prog1_output.txt) — output file placeholder.
 
-![Initial vs Goal](https://www.cs.princeton.edu/courses/archive/spr18/cos226/assignments/8puzzle/4moves.png)
+## Building and experimenting
 
-Initial vs Goal State
+The source uses the GCC-specific header `<bits/stdc++.h>`, so GCC/G++ is a practical choice:
 
-[![Watch the video](https://i.vimeocdn.com/video/831405690_1280x720.jpg)](https://vimeo.com/373321351)
-**Watch the video to see how the code runs**
+```bash
+g++ -std=c++17 -O2 8_Puzzle.cpp -o eight_puzzle
+./eight_puzzle
+```
+
+Enter nine values when prompted, for example:
+
+```text
+1 2 3 4 5 6 7 0 8
+```
+
+These commands are based on source inspection; compilation and runtime behavior have not been verified for this documentation update.
+
+## Video
+
+[Original demonstration on Vimeo](https://vimeo.com/373321351)
+
+## Notes and limitations
+
+The code is inspired by A*-style heuristic search but does not currently establish full A* correctness or guaranteed optimal paths: its queue comparator, handling of path costs, and visited-state strategy warrant further review. It also lacks an explicit solvability test for unsolvable initial arrangements.
+
+This repository is an algorithms exercise, **not a model trained on data**.
+
+[GitHub profile](https://github.com/tariksalay)
