@@ -1,0 +1,7 @@
+build/
+eight-puzzle
+8_Puzzle
+*.exe
+*.o
+__pycache__/
+.DS_Store
