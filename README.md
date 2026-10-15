@@ -1,57 +1,40 @@
-# Eight Puzzle Solver — C++ Heuristic Search
+# Eight Puzzle Solver
 
-**C++ · Priority Queue · Manhattan Distance · State-Space Search**
+**C++17 · A* search · Manhattan distance · Priority queue**
 
-A command-line solver for the classic 3×3 sliding-tile puzzle. The program explores puzzle states and prioritizes candidates using a cost function based on path length plus Manhattan distance from each tile to its goal position.
+A command-line solver for a 3×3 sliding-tile puzzle. It validates the board, checks whether the target can be reached, and prints a shortest sequence of legal moves to the goal.
 
-## Approach
+## What this project demonstrates
 
-1. Read nine tile values from standard input, where `0` represents the blank space.
-2. Represent the 3×3 board as nested C++ vectors.
-3. Generate neighboring boards by swapping the blank tile up, down, left, or right.
-4. Calculate a Manhattan-distance heuristic and use a priority queue to choose states.
-5. Track visited states and parent relationships; print a sequence of boards when the target is reached.
+- State-space search with a Manhattan-distance heuristic.
+- Best-cost tracking and reconstruction of a solution path.
+- Input validation and independent shortest-path checks.
 
-The goal position is:
+## Start here
 
-```text
-1 2 3
-4 5 6
-7 8 0
+| Read | Use it for |
+| --- | --- |
+| [Project walkthrough](docs/PROJECT_GUIDE.md) | Purpose, workflow, repository map, and a concrete example |
+| [Code and artifact reference](docs/CODE_REFERENCE.md) | Important files, functions, classes, and their responsibilities |
+| [Development guide](docs/DEVELOPMENT.md) | Setup, configuration, commands, tests, and remaining limitations |
+
+## Explore locally
+
+```sh
+mkdir -p build
+g++ -std=c++17 -O2 -Wall -Wextra -Werror 8_Puzzle.cpp -o build/eight-puzzle
+printf '1 2 3 4 5 6 7 0 8\n' | build/eight-puzzle
+python -m unittest discover -s tests -v
 ```
 
-## Code and files
+## Validation and scope
 
-- [8_Puzzle.cpp](8_Puzzle.cpp) — complete C++ source.
-- [input.txt](input.txt) — example input file included in the repository.
-- [8_Puzzle.exe](8_Puzzle.exe) — historical compiled Windows executable.
-- [prog1_output.txt](prog1_output.txt) — output file placeholder.
+An algorithms learning project, with three passing test groups covering shortest paths, a known 31-move puzzle, and invalid/unsolvable input. There is no trained machine-learning model. The committed Windows executable is a historical build; compile the current source to use this implementation.
 
-## Building and experimenting
+[Original demonstration](https://vimeo.com/373321351) describes the earlier project version.
 
-The source uses the GCC-specific header `<bits/stdc++.h>`, so GCC/G++ is a practical choice:
+---
 
-```bash
-g++ -std=c++17 -O2 8_Puzzle.cpp -o eight_puzzle
-./eight_puzzle
-```
+[GitHub profile](https://github.com/tariksalay) · [Portfolio](https://tariksalay.github.io/) · [Earlier README](README_HISTORY.md)
 
-Enter nine values when prompted, for example:
-
-```text
-1 2 3 4 5 6 7 0 8
-```
-
-These commands are based on source inspection; compilation and runtime behavior have not been verified for this documentation update.
-
-## Video
-
-[Original demonstration on Vimeo](https://vimeo.com/373321351)
-
-## Notes and limitations
-
-The code is inspired by A*-style heuristic search but does not currently establish full A* correctness or guaranteed optimal paths: its queue comparator, handling of path costs, and visited-state strategy warrant further review. It also lacks an explicit solvability test for unsolvable initial arrangements.
-
-This repository is an algorithms exercise, **not a model trained on data**.
-
-[GitHub profile](https://github.com/tariksalay)
+The earlier README is preserved as historical context; the guides above describe this branch's implementation.
